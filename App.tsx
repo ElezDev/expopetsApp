@@ -8,7 +8,8 @@ import BottomTabNavigator from './screens/BottomTabNavigator';
 export type RootStackParamList = {
   Splash: undefined;
   Login: undefined;
-  Main: undefined; 
+  Main: undefined;
+  // Home: undefined; 
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
