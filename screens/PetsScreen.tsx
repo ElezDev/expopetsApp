@@ -88,8 +88,8 @@ const PetsScreen = () => {
           cardIndex={cardIndex}
           backgroundColor="transparent"
           stackSize={3}
-          stackSeparation={10} // Ajustar el espacio entre las tarjetas en el stack
-          cardVerticalMargin={10} // Añade márgenes verticales para mejor centrado
+          stackSeparation={10} 
+          cardVerticalMargin={10}
           disableTopSwipe
           disableBottomSwipe
           overlayLabels={{
@@ -105,7 +105,7 @@ const PetsScreen = () => {
                 },
                 wrapper: {
                   position: "absolute",
-                  top: 50,
+                  top: 10,
                   left: 20,
                   zIndex: 1,
                 },
@@ -123,7 +123,7 @@ const PetsScreen = () => {
                 },
                 wrapper: {
                   position: "absolute",
-                  top: 50,
+                  top: 2,
                   right: 20,
                   zIndex: 1,
                 },
@@ -162,9 +162,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 20,
     overflow: "hidden",
-    elevation: 50,
-    width: width * 0.9, // Ajustar al 90% del ancho de la pantalla
-    height: height * 0.6,
+    elevation: 5,
+    width: width * 0.9,
+    height: height * 0.7,
   },
   image: {
     width: "100%",

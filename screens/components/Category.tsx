@@ -1,8 +1,17 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
+import { useNavigation } from '@react-navigation/native'; // Importar hook para navegación
 import color from "../../src/constant/color";
 
 const Category = () => {
+  const navigation = useNavigation(); // Inicializar hook de navegación
+
+  // Función para manejar la navegación a la pantalla de detalle
+  const handleCategoryPress = (categoryName: string) => {
+    navigation.navigate('CategoryDetail' , { categoryName }); 
+    // Navegar a la pantalla de detalle
+  };
+
   return (
     <View style={{ marginTop: 25 }}>
       <Text style={styles.title}>Explorar</Text>
@@ -10,32 +19,39 @@ const Category = () => {
         <Button
           image={require("../../src/asset/category/aves.png")}
           label="Aves"
+          onPress={() => handleCategoryPress("Aves")} // Pasar la categoría seleccionada
         />
         <Button
           image={require("../../src/asset/category/dog.png")}
           label="Perros"
+          onPress={() => handleCategoryPress("Perros")}
         />
         <Button
           image={require("../../src/asset/category/cat.png")}
           label="Gatos"
+          onPress={() => handleCategoryPress("Gatos")}
         />
         <Button
           image={require("../../src/asset/category/chameleon.png")}
           label="Reptiles"
+          onPress={() => handleCategoryPress("Reptiles")}
         />
       </View>
       <View style={styles.row}>
         <Button
           image={require("../../src/asset/category/fish.png")}
           label="Peces"
+          onPress={() => handleCategoryPress("Peces")}
         />
         <Button
           image={require("../../src/asset/category/rat.png")}
           label="Roedores"
+          onPress={() => handleCategoryPress("Roedores")}
         />
         <Button
           image={require("../../src/asset/category/1.png")}
           label="Otros"
+          onPress={() => handleCategoryPress("Otros")}
         />
         <Button2 />
       </View>
@@ -68,12 +84,14 @@ const styles = StyleSheet.create({
 interface ButtonProps {
   image: any;
   label: string;
+  onPress: () => void;  // Añadir propiedad onPress para manejar la navegación
 }
 
-const Button = ({ image, label }: ButtonProps) => {
+const Button = ({ image, label, onPress }: ButtonProps) => {
   return (
     <View style={{ alignItems: "center" }}>
       <TouchableOpacity
+        onPress={onPress} // Llamar la función onPress cuando se haga clic
         style={{
           shadowColor: "#000",
           shadowOpacity: 0.1,

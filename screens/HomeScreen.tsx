@@ -118,6 +118,7 @@ const Home = () => {
         }}
       >
         <Category />
+        
       </Animated.View>
 
       <Animated.View
