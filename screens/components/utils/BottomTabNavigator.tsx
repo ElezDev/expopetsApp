@@ -2,9 +2,10 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View, Text, StyleSheet } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import ProfileScreen from './ProfileScreen';
-import PetsScreen from './PetsScreen';
-import HomeScreen from './HomeScreen';
+import HomeScreen from 'screens/components/home/HomeScreen';
+import ProfileScreen from '../profile/ProfileScreen';
+import PetsScreen from '../pets/PetsScreen';
+
 
 const Tab = createBottomTabNavigator();
 

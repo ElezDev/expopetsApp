@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, TextInput, StyleSheet, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons"; // or any other icon library
-import color from "../../src/constant/color";
+import color from "src/constant/color";
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
   return (
@@ -11,7 +11,7 @@ const Search = () => {
       </TouchableOpacity>
       <TextInput
         style={styles.textInput}
-        placeholder="Search Doctor ..."
+        placeholder="Search..."
         value={searchTerm}
         onChangeText={(text) => setSearchTerm(text)}
       />

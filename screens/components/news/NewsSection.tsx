@@ -9,7 +9,7 @@ import {
 import React from "react";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import color from "../../src/constant/color";
+import color from "../../../src/constant/color";
 
 const news = [
   {
@@ -51,27 +51,26 @@ const news = [
 
 const NewsSection = () => {
   const navigation = useNavigation();
+
+  const handleDetailNews = (newsItem: typeof news[0]) => {
+    navigation.navigate("NewsDetail", { newsItem });
+  };
   return (
     <View style={{ marginTop: 25 }}>
       <Text style={styles.title}>Latest News</Text>
-
+  
       {news.map((item, index) => (
-        <Pressable
-          onPress={() => {}}
-          key={index}
-          style={styles.newsCard}
-        >
-          <Image
-            source={{ uri: item.image }}
-            style={styles.newsImage}
-          />
+        <Pressable onPress={() => {}} key={index} style={styles.newsCard}>
+          <Image source={{ uri: item.image }} style={styles.newsImage} />
           <View style={styles.textContainer}>
             <Text style={styles.newsTitle}>{item.title}</Text>
             <Text style={styles.newsDescription}>{item.description}</Text>
           </View>
           <TouchableOpacity
             style={styles.readMoreButton}
-            onPress={() => {}}
+            onPress={() => {
+              handleDetailNews(item);
+            }}
           >
             <Feather name="chevron-right" size={24} color={color.primaryColor} />
           </TouchableOpacity>

@@ -12,7 +12,7 @@ import {
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import BASE_URL from '../src/Config/config';
+import BASE_URL from 'src/Config/config';
 
 interface Persona {
   first_name: string;
@@ -127,7 +127,7 @@ const ProfileHeader = ({
 }) => (
   <View style={styles.profileContainer}>
     <Image
-      source={{ uri: `http://192.168.101.10:8000${profile.image_url}` }}
+      source={{ uri:`${profile.image_url}` }}
       style={styles.profileImage}
     />
     <Text style={styles.name}>{`${profile.first_name} ${profile.last_name}`}</Text>

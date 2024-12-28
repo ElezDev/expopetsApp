@@ -3,10 +3,12 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, Image, Acti
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../App';
-import BASE_URL from '../src/Config/config';
-import colors from '../src/constant/color'; 
+
 import Icon from 'react-native-vector-icons/Feather'; // Importar el ícono
+import { RootStackParamList } from 'App';
+import BASE_URL from 'src/Config/config';
+import color from "src/constant/color";
+
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
 
@@ -58,7 +60,7 @@ const LoginScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../src/asset/category/1.png')} 
+        source={require('@asset/category/1.png')} 
         style={styles.logo}
       />
       <Text style={styles.title}>🐾 Bienvenido a FindPets</Text>
@@ -66,7 +68,7 @@ const LoginScreen: React.FC<Props> = ({ navigation }) => {
       <TextInput
         style={styles.input}
         placeholder="Correo electrónico"
-        placeholderTextColor={colors.black}
+        placeholderTextColor={color.black}
         value={email}
         onChangeText={setEmail}
       />
@@ -74,19 +76,19 @@ const LoginScreen: React.FC<Props> = ({ navigation }) => {
         <TextInput
           style={styles.input}
           placeholder="Contraseña"
-          placeholderTextColor={colors.black}
+          placeholderTextColor={color.black}
           secureTextEntry={secureText}
           value={password}
           onChangeText={setPassword}
         />
         <TouchableOpacity onPress={toggleSecureText} style={styles.eyeIcon}>
-          <Icon name={secureText ? 'eye-off' : 'eye'} size={24} color={colors.primaryColor} />
+          <Icon name={secureText ? 'eye-off' : 'eye'} size={24} color={color.primaryColor} />
         </TouchableOpacity>
       </View>
 
       {/* Pantalla de carga */}
       {loading ? (
-        <ActivityIndicator size="large" color={colors.secondaryColor} />
+        <ActivityIndicator size="large" color={color.secondaryColor} />
       ) : (
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <Text style={styles.buttonText}>Iniciar Sesión</Text>
@@ -106,7 +108,7 @@ const LoginScreen: React.FC<Props> = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.primaryLight,
+    backgroundColor: color.primaryLight,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
@@ -119,25 +121,25 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 26,
     fontWeight: 'bold',
-    color: colors.primaryColor,
+    color: color.primaryColor,
     marginBottom: 10,
   },
   subtitle: {
     fontSize: 16,
-    color: colors.primaryColor,
+    color: color.primaryColor,
     marginBottom: 30,
     textAlign: 'center',
   },
   input: {
     width: '100%',
-    backgroundColor: colors.white,
+    backgroundColor: color.white,
     borderRadius: 12,
     padding: 15,
     borderWidth: 1,
-    borderColor: colors.primaryLighter,
+    borderColor: color.primaryLighter,
     marginBottom: 15,
     fontSize: 16,
-    color: colors.primaryColor,
+    color: color.primaryColor,
     shadowColor: '#000',
     shadowOpacity: 0.1,
     shadowOffset: { width: 0, height: 1 },
@@ -154,7 +156,7 @@ const styles = StyleSheet.create({
   },
   button: {
     width: '100%',
-    backgroundColor: colors.secondaryColor,
+    backgroundColor: color.secondaryColor,
     paddingVertical: 15,
     borderRadius: 12,
     alignItems: 'center',
@@ -165,17 +167,17 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   buttonText: {
-    color: colors.white,
+    color: color.white,
     fontSize: 18,
     fontWeight: 'bold',
   },
   footerText: {
     fontSize: 14,
-    color: colors.primaryColor,
+    color: color.primaryColor,
     marginTop: 10,
   },
   footerLink: {
-    color: colors.secondaryColor,
+    color: color.secondaryColor,
     fontWeight: 'bold',
   },
 });

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, Image, Dimensions, ActivityIndicator } from "react-native";
 import Swiper from "react-native-deck-swiper";
 import axios from "axios";
-import BASE_URL from "../src/Config/config";
+import BASE_URL from "src/Config/config";
 
 const { width, height } = Dimensions.get("window");
 

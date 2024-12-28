@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
-import color from "../../src/constant/color";
+import color from "src/constant/color";
 
 const BannerAdopcion = () => {
   return (
