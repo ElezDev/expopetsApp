@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
+import Animated, { FadeIn, FadeInUp } from "react-native-reanimated";
 
 const NewsDetailScreen = ({ route }: any) => {
   const { newsItem } = route.params;
 
   return (
     <View style={styles.container}>
-      <Image source={{ uri: newsItem.image }} style={styles.image} />
-      <Text style={styles.title}>{newsItem.title}</Text>
-      <Text style={styles.description}>{newsItem.description}</Text>
+      <Animated.Image
+        source={{ uri: newsItem.image }}
+        style={styles.image}
+        entering={FadeInUp.duration(800)}
+      />
+      <Animated.Text style={styles.title} entering={FadeIn.duration(1000)}>
+        {newsItem.title}
+      </Animated.Text>
+      <Animated.Text
+        style={styles.description}
+        entering={FadeIn.delay(300).duration(1200)}
+      >
+        {newsItem.description}
+      </Animated.Text>
     </View>
   );
 };

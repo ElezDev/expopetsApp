@@ -2,10 +2,12 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View, Text, StyleSheet } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Animated from 'react-native-reanimated';
 import HomeScreen from 'screens/components/home/HomeScreen';
 import ProfileScreen from '../profile/ProfileScreen';
 import PetsScreen from '../pets/PetsScreen';
-
+import color from 'src/constant/color';
+import CustomHeader from '../navigations/CustomHeader';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,60 +25,92 @@ const CustomTabBarLabel: React.FC<CustomTabBarLabelProps> = ({ focused, title })
 const BottomTabNavigator = () => {
   return (
     <Tab.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
-
-          if (route.name === 'Home') {
-            iconName = focused ? 'home' : 'home-outline';
-          } else if (route.name === 'Profile') {
-            iconName = focused ? 'person' : 'person-outline';
-          } else if (route.name === 'Pets') {
-            iconName = focused ? 'paw' : 'paw-outline';
-          }
-
-          return <Ionicons name={iconName as string} size={size} color={color} />;
-        },
-        tabBarLabel: ({ focused }) => (
-          <CustomTabBarLabel focused={focused} title={route.name} />
-        ),
-        tabBarStyle: styles.tabBar,
-        tabBarActiveTintColor: '#553B9C',
-        tabBarInactiveTintColor: 'gray',
-        headerStyle: styles.header,
-        headerTitleStyle: styles.headerTitle,
-      })}
-    >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Pets" component={PetsScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
-     
-    </Tab.Navigator>
+    screenOptions={({ route }) => ({
+      tabBarIcon: ({ focused, color, size }) => {
+        let iconName;
+  
+        if (route.name === 'Home') {
+          iconName = focused ? 'home' : 'home-outline';
+        } else if (route.name === 'Profile') {
+          iconName = focused ? 'person' : 'person-outline';
+        } else if (route.name === 'Pets') {
+          iconName = focused ? 'paw' : 'paw-outline';
+        }
+  
+        return (
+          <Animated.View style={[styles.iconContainer, focused && styles.iconFocused]}>
+            <Ionicons name={iconName as string} size={size} color={color} />
+          </Animated.View>
+        );
+      },
+      tabBarLabel: ({ focused }) => (
+        <CustomTabBarLabel focused={focused} title={route.name} />
+      ),
+      tabBarStyle: styles.tabBar,
+      tabBarActiveTintColor: color.primaryColor,
+      tabBarInactiveTintColor: '#A9A9A9',
+      header: ({ navigation, route, options }) => (
+        <CustomHeader
+          title={options.title || route.name}
+          showBackButton={false}
+          onBackPress={() => navigation.goBack()}
+        />
+      ),
+    })}
+  >
+    <Tab.Screen name="Home" component={HomeScreen} />
+    <Tab.Screen name="Pets" component={PetsScreen} />
+    <Tab.Screen name="Profile" component={ProfileScreen} />
+  </Tab.Navigator>
+  
   );
 };
 
 const styles = StyleSheet.create({
   tabBar: {
-    backgroundColor: '#f8f9fa',
-    borderTopWidth: 1,
-    borderTopColor: '#e5e5e5',
-    height: 70,
-    paddingBottom: 10,
+    position: 'absolute', 
+    bottom: 4,
+    left: 30, 
+    right: 30,
+    backgroundColor: '#FFFFFFE5', 
+    borderRadius: 20, 
+    height: 65, 
+    paddingBottom: 10, 
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 }, 
+    shadowOpacity: 0.1, 
+    shadowRadius: 8, 
+    borderWidth: 1, 
+    borderColor: '#ECECEC', 
+  },
+  iconContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+  },
+  iconFocused: {
+    backgroundColor: '#F3F2F2FF',
   },
   tabLabel: {
     fontSize: 12,
-    color: 'gray',
+    color: '#A9A9A9',
   },
   tabLabelFocused: {
-    color: '#007BFF',
-    fontWeight: 'bold',
+    color: color.primaryColor,
+    fontWeight: '600',
   },
   header: {
-    backgroundColor: '#553B9C',
+    backgroundColor: color.primaryColor,
+    shadowColor: 'transparent',
+    elevation: 0,
   },
   headerTitle: {
-    color: '#fff',
-    fontSize: 18,
+    color: '#FFF',
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 });
 
