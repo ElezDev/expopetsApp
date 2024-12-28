@@ -12,7 +12,7 @@ export type RootStackParamList = {
   Login: undefined;
   Main: undefined;
   CategoryDetail: { categoryName: string }; 
-  NewsDetail: { Name: string };
+  NewsDetail: { newsItem: { id: number; title: string; description: string; image: string } }; 
 
 };
 
@@ -27,7 +27,6 @@ export default function App() {
         <Stack.Screen name="Main" component={BottomTabNavigator} options={{ headerShown: false }} />
         <Stack.Screen name="CategoryDetail" component={CategoryDetailScreen} options={{ title: 'Detalle de Categoría' }} />
         <Stack.Screen name="NewsDetail" component={NewsDetailScreen} options={{ title: 'Detalle de Noticia' }} />
-
       </Stack.Navigator>
     </NavigationContainer>
   );

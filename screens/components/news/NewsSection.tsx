@@ -1,11 +1,4 @@
-import {
-  Image,
-  Pressable,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, Pressable, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -31,21 +24,21 @@ const news = [
     title: "Volunteer With Us!",
     description:
       "We are looking for passionate volunteers to help at our adoption center. Join us and make a difference!",
-      image: "https://picsum.photos/200",
+    image: "https://picsum.photos/200",
   },
   {
     id: 4,
     title: "Adopt a Senior Pet",
     description:
       "Senior pets need love too! Consider adopting a senior pet for a lifetime of joy and companionship.",
-      image: "https://picsum.photos/200",
+    image: "https://picsum.photos/200",
   },
   {
     id: 5,
     title: "Pet Health Tips",
     description:
       "Check out these essential pet health tips to keep your furry friends healthy and happy.",
-      image: "https://picsum.photos/200",
+    image: "https://picsum.photos/200",
   },
 ];
 
@@ -55,12 +48,13 @@ const NewsSection = () => {
   const handleDetailNews = (newsItem: typeof news[0]) => {
     navigation.navigate("NewsDetail", { newsItem });
   };
+
   return (
     <View style={{ marginTop: 25 }}>
       <Text style={styles.title}>Latest News</Text>
-  
+
       {news.map((item, index) => (
-        <Pressable onPress={() => {}} key={index} style={styles.newsCard}>
+        <Pressable key={index} onPress={() => handleDetailNews(item)} style={styles.newsCard}>
           <Image source={{ uri: item.image }} style={styles.newsImage} />
           <View style={styles.textContainer}>
             <Text style={styles.newsTitle}>{item.title}</Text>
@@ -68,9 +62,7 @@ const NewsSection = () => {
           </View>
           <TouchableOpacity
             style={styles.readMoreButton}
-            onPress={() => {
-              handleDetailNews(item);
-            }}
+            onPress={() => handleDetailNews(item)} // This will navigate with the newsItem
           >
             <Feather name="chevron-right" size={24} color={color.primaryColor} />
           </TouchableOpacity>
