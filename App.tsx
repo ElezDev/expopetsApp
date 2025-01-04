@@ -7,6 +7,7 @@ import BottomTabNavigator from 'screens/components/utils/BottomTabNavigator';
 import LoginScreen from 'screens/components/auth/LoginScreen';
 import SplashScreen from 'screens/components/utils/SplashScreen';
 import notificationsScreen from 'screens/components/notifications/notificationsScreen';
+import { usePushNotifications } from 'usePushNotifications';
 
 export type RootStackParamList = {
   Splash: undefined;
@@ -21,6 +22,12 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
+  const { expoPushToken, notification } = usePushNotifications();
+  const data = JSON.stringify(notification, undefined, 2);
+  if (expoPushToken) {
+    console.log(expoPushToken.data, 'TOKEN');
+  }
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Splash">
