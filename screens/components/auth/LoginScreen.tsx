@@ -60,7 +60,7 @@ const LoginScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('@asset/category/1.png')} 
+        source={require('@asset/icon/huella.png')} 
         style={styles.logo}
       />
       <Text style={styles.title}>🐾 Bienvenido a FindPets</Text>

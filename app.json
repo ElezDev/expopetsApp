@@ -7,11 +7,7 @@
     "icon": "./assets/paw.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/paw.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
+  
     "ios": {
       "supportsTablet": true
     },

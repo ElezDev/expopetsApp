@@ -5,12 +5,12 @@ import CategoryDetailScreen from './screens/components/categories/CategoryDetail
 import NewsDetailScreen from './screens/components/news/NewsDetailScreen';
 import BottomTabNavigator from 'screens/components/utils/BottomTabNavigator';
 import LoginScreen from 'screens/components/auth/LoginScreen';
-import SplashScreen from 'screens/components/utils/SplashScreen';
 import notificationsScreen from 'screens/components/notifications/notificationsScreen';
 import { usePushNotifications } from 'usePushNotifications';
+import IndicatorScreen from 'screens/components/utils/IdicatorScreen';
 
 export type RootStackParamList = {
-  Splash: undefined;
+  Indicator: undefined;
   Login: undefined;
   Main: undefined;
   Notification: undefined;
@@ -30,8 +30,8 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Splash">
-        <Stack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false }} />
+      <Stack.Navigator initialRouteName="Indicator">
+        <Stack.Screen name="Indicator" component={IndicatorScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Main" component={BottomTabNavigator} options={{ headerShown: false }} />
         <Stack.Screen name="CategoryDetail" component={CategoryDetailScreen} options={{ title: 'Detalle de Categoría' }} />
