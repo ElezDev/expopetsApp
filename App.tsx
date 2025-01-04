@@ -6,11 +6,13 @@ import NewsDetailScreen from './screens/components/news/NewsDetailScreen';
 import BottomTabNavigator from 'screens/components/utils/BottomTabNavigator';
 import LoginScreen from 'screens/components/auth/LoginScreen';
 import SplashScreen from 'screens/components/utils/SplashScreen';
+import notificationsScreen from 'screens/components/notifications/notificationsScreen';
 
 export type RootStackParamList = {
   Splash: undefined;
   Login: undefined;
   Main: undefined;
+  Notification: undefined;
   CategoryDetail: { categoryName: string }; 
   NewsDetail: { newsItem: { id: number; title: string; description: string; image: string } }; 
 
@@ -27,6 +29,8 @@ export default function App() {
         <Stack.Screen name="Main" component={BottomTabNavigator} options={{ headerShown: false }} />
         <Stack.Screen name="CategoryDetail" component={CategoryDetailScreen} options={{ title: 'Detalle de Categoría' }} />
         <Stack.Screen name="NewsDetail" component={NewsDetailScreen} options={{ title: 'Detalle de Noticia' }} />
+        <Stack.Screen name="Notification" component={notificationsScreen} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

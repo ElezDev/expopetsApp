@@ -1,5 +1,5 @@
 import React from "react";
-import { Alert } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import color from "src/constant/color";
@@ -16,11 +16,12 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({
   title,
   onBackPress,
   showBackButton = false,
-  onNotificationsPress,
   onMenuPress,
 }) => {
-  const hendelBackPress = () => {
-    Alert.alert("En desarrollo");
+  const navigation = useNavigation<any>();
+
+  const handleNotificationsPress = () => {
+    navigation.navigate('Notification');
   };
   return (
     <View style={styles.container}>
@@ -32,7 +33,7 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({
       <Text style={styles.title}>{title}</Text>
 
       <View style={styles.rightIcons}>
-        <TouchableOpacity onPress={hendelBackPress} style={styles.iconButton}>
+        <TouchableOpacity onPress={handleNotificationsPress} style={styles.iconButton}>
           <Ionicons name="notifications-outline" size={24} color="#FFF" />
         </TouchableOpacity>
         <TouchableOpacity onPress={onMenuPress} style={styles.iconButton}>

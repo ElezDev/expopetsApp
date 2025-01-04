@@ -8,6 +8,7 @@ import ProfileScreen from '../profile/ProfileScreen';
 import PetsScreen from '../pets/PetsScreen';
 import color from 'src/constant/color';
 import CustomHeader from '../navigations/CustomHeader';
+import contactScreen from '../contact/contactScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -36,6 +37,9 @@ const BottomTabNavigator = () => {
         } else if (route.name === 'Pets') {
           iconName = focused ? 'paw' : 'paw-outline';
         }
+        else if (route.name === 'Contactos') {
+          iconName = focused ? 'person' : 'person-outline';
+        }
   
         return (
           <Animated.View style={[styles.iconContainer, focused && styles.iconFocused]}>
@@ -60,6 +64,7 @@ const BottomTabNavigator = () => {
   >
     <Tab.Screen name="Home" component={HomeScreen} />
     <Tab.Screen name="Pets" component={PetsScreen} />
+    <Tab.Screen name="Contactos" component={contactScreen} />
     <Tab.Screen name="Profile" component={ProfileScreen} />
   </Tab.Navigator>
   
