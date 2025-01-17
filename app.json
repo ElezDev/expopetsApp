@@ -4,23 +4,25 @@
     "slug": "findPetsApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/paw.png",
+    "icon": "./assets/pet-logo.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
-  
+      
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/paw.png",
+        "foregroundImage": "./assets/pet-logo.png",
         "backgroundColor": "#ffffff"
       },
       "googleServicesFile": "./android/app/google-services.json",
       "package": "com.elezdev.findPetsApp"
     },
-    "web": {
-      "favicon": "./assets/paw.png"
+    "splash": {
+      "image": "./assets/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#7738f4"
     },
     "extra": {
       "eas": {

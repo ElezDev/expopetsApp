@@ -60,7 +60,7 @@ const LoginScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('@asset/icon/huella.png')} 
+        source={require('@asset/icon/pet-logo.png')} 
         style={styles.logo}
       />
       <Text style={styles.title}>🐾 Bienvenido a FindPets</Text>
@@ -108,7 +108,7 @@ const LoginScreen: React.FC<Props> = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: color.primaryLight,
+    backgroundColor: color.primaryColorLighter,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
   },
   button: {
     width: '100%',
-    backgroundColor: color.secondaryColor,
+    backgroundColor: color.primaryColor,
     paddingVertical: 15,
     borderRadius: 12,
     alignItems: 'center',
