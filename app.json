@@ -1,27 +1,33 @@
 {
   "expo": {
-    "extra": {
-      "eas": {
-        "projectId": "310178a5-1194-46f7-a4d0-e20bd6be52e3"
-      }
-    },
-    "splash": {
-      "image": "./assets/logo.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#553B9C"
+    "name": "findPetsApp",
+    "slug": "findPetsApp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logo.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+      
+    "ios": {
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/pet-logo.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "googleServicesFile": "./android/app/google-services.json",
+      "package": "com.elezdev.findPetsApp"
     },
-    "icon": "./assets/logo.png",
-    "owner": "elezdev",
-    "plugins": [
-      "expo-build-properties"
-    ]
+    "splash": {
+      "image": "./assets/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#7738f4"
+    },
+    "extra": {
+      "eas": {
+          "projectId": "310178a5-1194-46f7-a4d0-e20bd6be52e3"
+      }
+    }
   }
 }
-
-
