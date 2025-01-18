@@ -1,19 +1,14 @@
 {
   "expo": {
-    "name": "findPetsApp",
-    "slug": "findPetsApp",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/logo.png",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    "extra": {
+      "eas": {
+        "projectId": "310178a5-1194-46f7-a4d0-e20bd6be52e3"
+      }
+    },
     "splash": {
       "image": "./assets/logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#553B9C"
-    },
-    "ios": {
-      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
@@ -21,19 +16,12 @@
         "backgroundColor": "#ffffff"
       }
     },
-    "extra": {
-      "eas": {
-        "projectId": "310178a5-1194-46f7-a4d0-e20bd6be52e3"
-      }
-    },
+    "icon": "./assets/logo.png",
     "owner": "elezdev",
     "plugins": [
       "expo-build-properties"
     ]
   }
 }
-
-
-
 
 
