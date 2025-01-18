@@ -1,30 +1,16 @@
 {
   "expo": {
-    "name": "findPetsApp",
-    "version": "1.1.0",
-    "orientation": "portrait",
-    "icon": "./assets/logo.png",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/pet-logo.png",
-        "backgroundColor": "#ffffff"
-      },
-      "googleServicesFile": "./android/app/google-services.json",
-      "package": "com.elezdev.findPetsApp"
-    },
-    "splash": {
-      "image": "./assets/logo.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#7738f4"
-    },
     "extra": {
       "eas": {
         "projectId": "1443ca1a-57f1-445a-a835-5bb7c2b60c6e"
+      }
+    },
+    "android": {
+      "buildProperties": {
+        "minSdkVersion": 21,
+        "compileSdkVersion": 33,
+        "targetSdkVersion": 33,
+        "enableProguardInReleaseBuilds": true
       }
     },
     "owner": "elezdev",
