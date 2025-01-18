@@ -1,4 +1,4 @@
-package com.elezdev.findPetsApp
+package com.elezdev.findpetsapp
 
 import android.app.Application
 import android.content.res.Configuration

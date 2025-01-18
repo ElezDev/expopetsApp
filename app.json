@@ -5,17 +5,12 @@
         "projectId": "1443ca1a-57f1-445a-a835-5bb7c2b60c6e"
       }
     },
-    "android": {
-      "buildProperties": {
-        "minSdkVersion": 21,
-        "compileSdkVersion": 33,
-        "targetSdkVersion": 33,
-        "enableProguardInReleaseBuilds": true
-      }
-    },
     "owner": "elezdev",
     "plugins": [
       "expo-build-properties"
-    ]
+    ],
+    "android": {
+      "package": "com.elezdev.findpetsapp"
+    }
   }
 }
