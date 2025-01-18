@@ -21,7 +21,7 @@ extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
   }
 }
 
-rootProject.name = 'Find Pets App'
+rootProject.name = 'findPetsApp'
 
 dependencyResolutionManagement {
   versionCatalogs {
