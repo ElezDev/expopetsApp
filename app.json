@@ -1,16 +1,24 @@
 {
   "expo": {
+    "name": "Find Pets App",
+    "slug": "findpetsapp",
+    "platforms": ["ios", "android"],
+    "owner": "elezdev",
     "extra": {
       "eas": {
         "projectId": "1443ca1a-57f1-445a-a835-5bb7c2b60c6e"
       }
     },
-    "owner": "elezdev",
+    "android": {
+      "package": "com.elezdev.findPetsApp",
+      "versionCode": 1
+    },
+    "ios": {
+      "bundleIdentifier": "com.elezdev.findPetsApp",
+      "buildNumber": "1"
+    },
     "plugins": [
       "expo-build-properties"
-    ],
-    "android": {
-      "package": "com.elezdev.findpetsapp"
-    }
+    ]
   }
 }

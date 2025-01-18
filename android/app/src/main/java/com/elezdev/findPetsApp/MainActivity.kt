@@ -1,5 +1,5 @@
 import expo.modules.splashscreen.SplashScreenManager
-package com.elezdev.findpetsapp
+package com.elezdev.findPetsApp
 
 import android.os.Build
 import android.os.Bundle

@@ -88,7 +88,7 @@ android {
 
     namespace 'com.elezdev.findPetsApp'
     defaultConfig {
-        applicationId 'com.elezdev.findpetsapp'
+        applicationId 'com.elezdev.findPetsApp'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

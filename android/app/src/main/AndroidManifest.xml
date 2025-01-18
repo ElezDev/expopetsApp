@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.elezdev.findpetsapp">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.elezdev.findPetsApp">
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
   <uses-permission android:name="android.permission.INTERNET"/>
@@ -29,7 +29,7 @@
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
         <data android:scheme="com.elezdev.findPetsApp"/>
-        <data android:scheme="com.elezdev.findpetsapp"/>
+        <data android:scheme="com.elezdev.findPetsApp"/>
       </intent-filter>
     </activity>
   </application>
