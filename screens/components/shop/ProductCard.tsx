@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { View, Image, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import { Product } from './ProductTypes';
+import color from 'src/constant/color';
 
 interface ProductCardProps {
   products: Product[];
@@ -24,7 +25,7 @@ export const ProductList: React.FC<ProductCardProps> = ({ products }) => {
             <Text style={styles.oldPrice}>${item.oldPrice}</Text>
           )}
         </View>
-        <TouchableOpacity style={styles.addButton}>
+        <TouchableOpacity  style={styles.addButton}>
           <Text style={styles.addButtonText}>+</Text>
         </TouchableOpacity>
       </View>
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
     textDecorationLine: "line-through",
   },
   addButton: {
-    backgroundColor: "rgba(64, 124, 226, 1)",
+    backgroundColor: color.primaryColor,
     borderRadius: 5,
     justifyContent: "center",
     alignItems: "center",

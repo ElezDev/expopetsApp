@@ -3,6 +3,7 @@ import { View, Image, Text, StyleSheet, FlatList } from "react-native";
 import { Product } from "./ProductTypes";
 import { SearchBar } from "./SearchBar";
 import { ProductList } from "./ProductCard";
+import color from "src/constant/color";
 
 const popularProducts: Product[] = [
     {
@@ -54,7 +55,7 @@ export const PharmacyScreen: React.FC = () => {
       <View style={styles.prescriptionBanner}>
         <View style={styles.prescriptionContent}>
           <Text style={styles.prescriptionTitle}>
-            Order quickly with Prescription
+            esta farmacia es desarrollada por Elezdev
           </Text>
           <Text style={styles.prescriptionButton}>Upload Prescription</Text>
         </View>
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
     marginTop: 25,
     paddingLeft: 25,
     flexDirection: "row",
-    backgroundColor: "rgba(64, 124, 226, 1)",
+    backgroundColor: color.primaryColor,
   },
   prescriptionContent: {
     flex: 1,
